@@ -1,0 +1,23 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  selfLink: /api/v1/namespaces/philtest/serviceaccounts/phils-argocd-argocd-server
+  resourceVersion: '5262239'
+  name: phils-argocd-argocd-server
+  namespace: philtest
+  ownerReferences:
+    - apiVersion: argoproj.io/v1alpha1
+      kind: ArgoCD
+      name: phils-argocd
+      uid: da557ed8-4d60-4078-a7fc-8abaa92eb8d6
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    app.kubernetes.io/managed-by: phils-argocd
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+secrets:
+  - name: phils-argocd-argocd-server-dockercfg-z5zkj
+  - name: phils-argocd-argocd-server-token-4rhhq
+imagePullSecrets:
+  - name: phils-argocd-argocd-server-dockercfg-z5zkj
